@@ -1,0 +1,24 @@
+<h1>Blogs</h1>
+
+
+<a class="btn btn-success" routerLink="/blogs/add">Add</a>
+<br><br>
+<div class="row">
+    <div class="col-md-3 p-1" *ngFor="let blog of blogs">
+        <div class="card">
+            <div class="card-body">
+                <a routerLink="/blogs/{{blog.id}}">
+                    <h5>{{ blog.title }}</h5>
+                </a>
+                <p>{{ blog.body }}</p>
+
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info" routerLink="/blogs/{{blog.id}}/edit">Edit</button>
+                <button class="btn btn-danger ml-1" (click)="deleteBlog(blog.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+

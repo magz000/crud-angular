@@ -1,0 +1,22 @@
+<button class="btn btn-danger" (click)="goBack()">Back</button>
+<br>
+<br>
+
+<h1>Update Blog</h1>
+
+<form #blogForm="ngForm" (ngSubmit)="updateBlog()">
+
+  <div class="form-group">
+    <label>Title: </label>
+    <input class="form-control" type="text" name="title" [(ngModel)]="blog.title" required>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Body: </label>
+    <textarea class="form-control" name="body" [(ngModel)]="blog.body" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="!blogForm.form.valid">Submit</button>
+  </div>
+</form>
